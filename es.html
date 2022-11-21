@@ -76,6 +76,11 @@ body, html {
     <p class="w3-center"><em>No hay necesidad</em></p>
     <p class="w3-center">Si realmente quieres, puedes donar a esta asociación de bienestar animal sin fines de lucro. ¡Será como si me hicieras un regalo!</p>
   </div>
+  <div class="w3-center">
+    <p><em>La Via di Erasmo</em></p>
+    <p><em>IBAN: IT81I0303215000010000798800</em></p>
+    <button onclick="copia()">COPIA IBAN</button>
+ </div>
 </div>
 
 <script>
@@ -107,6 +112,19 @@ body, html {
           x.className = x.className.replace(" w3-show", "");
       }
   }
+
+  // copia iban
+  function copia() {
+    var input = document.createElement('input');
+    var area = 'IT81I0303215000010000798800';
+    input.setAttribute('value', area);
+    document.body.appendChild(input);
+    input.select();
+    var risultato = document.execCommand('copy');
+    document.body.removeChild(input);
+    alert('¡Gracias por la donación!❤');
+    return risultato;
+ }
   </script>
   
   </body>

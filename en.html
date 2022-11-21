@@ -76,6 +76,11 @@ body, html {
     <p class="w3-center"><em>There's no need</em></p>
     <p class="w3-center">If you really want, you can donate to this non-profit animal welfare association. It will be as if you gave me a gift!</p>
   </div>
+  <div class="w3-center">
+    <p><em>La Via di Erasmo</em></p>
+    <p><em>IBAN: IT81I0303215000010000798800</em></p>
+    <button onclick="copia()">COPY IBAN</button>
+ </div>
 </div>
 
 <script>
@@ -107,6 +112,19 @@ body, html {
           x.className = x.className.replace(" w3-show", "");
       }
   }
+
+  // copia iban
+  function copia() {
+    var input = document.createElement('input');
+    var area = 'IT81I0303215000010000798800';
+    input.setAttribute('value', area);
+    document.body.appendChild(input);
+    input.select();
+    var risultato = document.execCommand('copy');
+    document.body.removeChild(input);
+    alert('Thank you for your donation!❤');
+    return risultato;
+ }
   </script>
   
   </body>
